@@ -1,0 +1,36 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    width: 500px;
+    margin: auto;
+}
+span{
+    border-top-left-radius: 5px ;
+    background-color: white;
+    text-align: center;
+    border-start-end-radius: 5px;;
+    padding: 5px;
+
+}
+button{
+    border-top-left-radius: 0px;
+}
+main {
+}
+.oltasok {
+    display: flex;
+    flex-direction: column;
+}
+li{
+    list-style-type: none;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        background-color:  lightblue;
+        width: 400px;
+        margin: auto;
+        text-align: center;
+    }
+}
