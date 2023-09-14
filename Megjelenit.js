@@ -1,26 +1,33 @@
-import Oltas from "../Oltas.js"
+import Adat from "../adat.js";
 
-class Megjelenit{
-    #oltasok;
-    #adatok;
+class Megjelenit {
+  #oltasok;
+  #adatok;
 
-    constructor(oltasok, adatok, szuloElem){
-        this.#oltasok = oltasok;
-        this.#adatok = adatok;
+  constructor(oltasok, adatok, szuloElem) {
+    this.szuloElem = szuloElem;
+    this.#oltasok = oltasok;
+    this.#adatok = adatok;
+    this.oltasok();
+    this.kiir();
+  }
 
-
-        this.kiir(szuloElem);
+  oltasok() {
+    let txt = "";
+    for (let i = 0; i < this.#oltasok.length; i++) {
+      txt += "<span>" + this.#oltasok[i] + "</span>";
+      txt += "<div class='adatok'></div>";
     }
+    this.szuloElem.append(txt);
+    this.gyerekElem = this.szuloElem.children(".adatok");
+  }
 
-    kiir(szuloElem){
-        this.#oltasok.forEach((elem) =>{
-            new Oltas(elem, szuloElem);
-        })
-        this.#adatok.forEach((elem) =>{
-            new Adat(elem, this.gyerekElem)
-        })
-    }
+  kiir() {
 
+    this.#adatok.forEach((elem) => {
+        new Adat(elem, this.gyerekElem);
+      });
+  }
 }
 
 export default Megjelenit;
