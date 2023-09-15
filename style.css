@@ -9,7 +9,7 @@ main{
   margin: auto;
 }
 
-.oltas{
+#oltas{
   padding: 10px;
   font-weight: bolder;
   border-top-right-radius: 30px;

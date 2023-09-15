@@ -17,7 +17,7 @@ class Megjelenit {
     let txt = "";
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>"
-      txt += "<span class='oltas'>" + this.#oltasok[i] + "</span>";
+      txt += "<span id='oltas' class='border border-1'>" + this.#oltasok[i] + "</span>";
       txt += "<div class='adat"+[i]+"'></div>";
     }
     this.szuloElem.append(txt);
