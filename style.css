@@ -1,7 +1,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: lightblue;
-  width: 500px;
+  background-image: url();
+ 
+  
+}
+main{
+  width: 800px;
   margin: auto;
 }
 
@@ -29,10 +33,31 @@ li {
   list-style-type: none;
 }
 
+#meret{
+  width: 350px;
+  float: left;
+  margin: 10px;
+}
+
+#gombM{
+  width: 100px;
+}
+
+
 @media screen and (max-width: 600px) {
   body {
     background-color: lightblue;
     width: 400px;
     margin: auto;
+    padding: 15px;
+  }
+
+  #meret{
+    width: 150px;
+    float: left;
+  }
+  
+  #gombM{
+    width: 70px;
   }
 }
