@@ -7,7 +7,6 @@ header{
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: lightblue;
  
   
 }
@@ -29,7 +28,7 @@ footer {
 
 
 #oltas1, #oltas2, #oltas0{
-  background-color: lightgray;
+  background-color: rgb(247, 170, 136);
   padding: 20px;
   font-weight: bolder;
   border-radius: 30px;

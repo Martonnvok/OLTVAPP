@@ -18,7 +18,7 @@ class Megjelenit {
 
   navigacio() {
     const HEADER = $("header");
-    let txt = `<nav class="navbar navbar-expand-sm bg-dark navbar-dark">`;
+    let txt = `<nav class="navbar navbar-expand-sm bg-info navbar-light">`;
     txt += `<div class="container-fluid">
     <a class="navbar-brand" href="#">Logo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
