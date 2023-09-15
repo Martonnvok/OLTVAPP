@@ -12,12 +12,8 @@ body {
   
 }
 main{
-<<<<<<< HEAD
   margin-top: 100%;
   width: 800px;
-=======
-  width: 500px;
->>>>>>> 00de5438c5870cf8835362953e6a460cfc0c2620
   margin: auto;
   margin-bottom: 100px;
 }

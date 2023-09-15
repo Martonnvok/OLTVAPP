@@ -53,10 +53,10 @@ class Megjelenit {
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>";
       txt +=
-        "<span id='oltas' class='border border-1'>" +
+        "<span id='oltas"+[i]+"' class='border border-1'>" +
         this.#oltasok[i] +
         "</span>";
-      txt += "<div class='adat" + [i] + "'></div>";
+      txt += "<div class='adat" + [i] + "' style='display: none';></div>";
     }
     this.szuloElem.append(txt);
   }
@@ -69,10 +69,8 @@ class Megjelenit {
   }
 
   kattintas() {
-    let boolean = false;
     for (let i = 0; i < this.#oltasok.length; i++) {
       $("#oltas" + [i] + "").on("click", () => {
-        boolean = true;
         $(".adat" + [i] + "").show();
         $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
         $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
