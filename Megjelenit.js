@@ -3,11 +3,12 @@ import Adat from "../adat.js";
 class Megjelenit {
   #oltasok;
   #adatok;
+  szuloElem;
 
   constructor(oltasok, adatok, szuloElem) {
     this.szuloElem = szuloElem;
-    this.#oltasok = oltasok;
-    this.#adatok = adatok;
+    this.#oltasok = oltasok; //tömb
+    this.#adatok = adatok; //lista
     this.oltasok();
     this.kiir();
   }
@@ -15,6 +16,7 @@ class Megjelenit {
   oltasok() {
     let txt = "";
     for (let i = 0; i < this.#oltasok.length; i++) {
+      txt += "<br>"
       txt += "<span>" + this.#oltasok[i] + "</span>";
       txt += "<div class='adatok'></div>";
     }
@@ -26,7 +28,7 @@ class Megjelenit {
 
     this.#adatok.forEach((elem) => {
         new Adat(elem, this.gyerekElem);
-      });
+    });
   }
 }
 
