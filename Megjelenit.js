@@ -16,6 +16,7 @@ class Megjelenit {
     this.kiir();
 
 
+
   }
 
   navigacio() {
@@ -49,6 +50,9 @@ class Megjelenit {
 
     HEADER.append(txt);
 
+
+    this.kattintas();
+
   }
 
   oltasok() {
@@ -67,8 +71,13 @@ class Megjelenit {
       this.gyerekElem = this.szuloElem.children(".adat" + [i] + "");
       new Adat(this.#adatok[i], this.gyerekElem)
     }
+  }
 
-
+  kattintas(){
+    $("#oltas").on("click",() =>{
+      console.log("Hallo");
+      $("#adatbazis").show();
+    })
   }
 }
 
