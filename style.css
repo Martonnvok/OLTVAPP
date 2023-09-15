@@ -1,3 +1,10 @@
+header{
+  width: 100%;
+  background-color: white;
+  z-index: 1; 
+  position: fixed; 
+  top: 0; 
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url();
@@ -5,9 +12,21 @@ body {
   
 }
 main{
+  margin-top: 100%;
   width: 800px;
   margin: auto;
+  margin-bottom: 100px;
 }
+article {
+  margin-top: 100px; 
+  padding: 20px;
+}
+
+footer {
+  background-color: #555; 
+  height: 40px;
+}
+
 
 #oltas{
   padding: 10px;
@@ -33,7 +52,7 @@ li {
   list-style-type: none;
 }
 
-#meret{
+.meret{
   width: 350px;
   float: left;
   margin: 10px;
@@ -44,20 +63,32 @@ li {
 }
 
 
-@media screen and (max-width: 600px) {
-  body {
+@media screen and (max-width: 650px) {
+  body{
     background-color: lightblue;
-    width: 400px;
-    margin: auto;
-    padding: 15px;
+    
   }
 
-  #meret{
-    width: 150px;
+  .meret{
+    height: 50px;
+    width: 60px;
     float: left;
+    padding: 12px;
   }
   
   #gombM{
-    width: 70px;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 10px;
+  }
+
+  main {
+    margin:auto;
+    width: 400px;
+  }
+
+  main{
+    width: 500px;
   }
 }
