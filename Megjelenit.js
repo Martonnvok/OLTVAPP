@@ -11,6 +11,7 @@ class Megjelenit {
     this.#adatok = adatok; //lista
     this.oltasok();
     this.kiir();
+    this.kattintas();
   }
 
   oltasok() {
@@ -29,8 +30,13 @@ class Megjelenit {
       this.gyerekElem = this.szuloElem.children(".adat"+[i]+"");
       new Adat(this.#adatok[i], this.gyerekElem)
     }
+  }
 
-
+  kattintas(){
+    $("#oltas").on("click",() =>{
+      console.log("Hallo");
+      $("#adatbazis").show();
+    })
   }
 }
 
