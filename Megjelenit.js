@@ -1,4 +1,4 @@
-import Adat from "../adat.js";
+import Adat from "../Adat.js";
 
 class Megjelenit {
   #oltasok = [];
@@ -17,26 +17,35 @@ class Megjelenit {
   oltasok() {
     let txt = "";
     for (let i = 0; i < this.#oltasok.length; i++) {
-      txt += "<br>"
-      txt += "<span id='oltas' class='border border-1'>" + this.#oltasok[i] + "</span>";
-      txt += "<div class='adat"+[i]+"'></div>";
+      txt += "<br>";
+      txt +=
+        "<span id='oltas" +
+        [i] +
+        "' class='border border-1'>" +
+        this.#oltasok[i] +
+        "</span>";
+      txt += "<div class='adat" + [i] + "' style='display:none'></div>";
     }
     this.szuloElem.append(txt);
   }
 
   kiir() {
-    
     for (let i = 0; i < this.#adatok.length; i++) {
-      this.gyerekElem = this.szuloElem.children(".adat"+[i]+"");
-      new Adat(this.#adatok[i], this.gyerekElem)
+      this.gyerekElem = this.szuloElem.children(".adat" + [i] + "");
+      new Adat(this.#adatok[i], this.gyerekElem);
     }
   }
 
-  kattintas(){
-    $("#oltas").on("click",() =>{
-      console.log("Hallo");
-      $("#adatbazis").show();
-    })
+  kattintas() {
+    let boolean = false;
+    for (let i = 0; i < this.#oltasok.length; i++) {
+      $("#oltas" + [i] + "").on("click", () => {
+        boolean = true;
+        $(".adat" + [i] + "").show();
+        $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
+        $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
+      });
+    }
   }
 }
 

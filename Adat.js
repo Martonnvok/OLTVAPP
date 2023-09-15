@@ -11,7 +11,7 @@ class Adat {
   kiir() {
     let txt = ""
     for (const key in this.#elem) {
-      txt += "<span id='adatbazis'class='border border-1' style='display:none'>" +key+": "+this.#elem[key] + "</span>";
+      txt += "<span id='"+key+"'class='border border-1'>" +key+": "+this.#elem[key] + "</span>";
     }
     this.#szuloElem.append(txt);
   }

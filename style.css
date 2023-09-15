@@ -9,11 +9,11 @@ main{
   margin: auto;
 }
 
-#oltas{
-  padding: 10px;
+#oltas1, #oltas2, #oltas0{
+  background-color: lightgray;
+  padding: 20px;
   font-weight: bolder;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  border-radius: 30px;
   text-align: center;
 }
 span {
