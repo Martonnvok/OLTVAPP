@@ -4,15 +4,25 @@ body {
   width: 500px;
   margin: auto;
 }
-span {
-  border-top-left-radius: 5px;
-  background-color: white;
+
+.oltas{
+  padding: 10px;
+  font-weight: bolder;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   text-align: center;
-  border-start-end-radius: 5px;
-  padding: 5px;
 }
-button {
-  border-top-left-radius: 0px;
+span {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 20px;
+  padding: 10px;
+}
+#emlékeztető{
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 li {

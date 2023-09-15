@@ -1,8 +1,8 @@
 import Adat from "../adat.js";
 
 class Megjelenit {
-  #oltasok;
-  #adatok;
+  #oltasok = [];
+  #adatok = [];
   szuloElem;
 
   constructor(oltasok, adatok, szuloElem) {
@@ -17,18 +17,20 @@ class Megjelenit {
     let txt = "";
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>"
-      txt += "<span>" + this.#oltasok[i] + "</span>";
-      txt += "<div class='adatok'></div>";
+      txt += "<span class='oltas'>" + this.#oltasok[i] + "</span>";
+      txt += "<div class='adat"+[i]+"'></div>";
     }
     this.szuloElem.append(txt);
-    this.gyerekElem = this.szuloElem.children(".adatok");
   }
 
   kiir() {
+    
+    for (let i = 0; i < this.#adatok.length; i++) {
+      this.gyerekElem = this.szuloElem.children(".adat"+[i]+"");
+      new Adat(this.#adatok[i], this.gyerekElem)
+    }
 
-    this.#adatok.forEach((elem) => {
-        new Adat(elem, this.gyerekElem);
-    });
+
   }
 }
 

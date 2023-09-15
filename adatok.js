@@ -5,7 +5,7 @@ export const oltasok = [
 ]
 
 export const adatok = [
-    {datum: "2002.04.12", tipus: "Bla", informacio: "asd", emlekezteto: "Ja"},
-    {datum: "2002.04.13", tipus: "la", informacio: "sd", emlekezteto: "Jaj"},
-    {datum: "2002.04.14", tipus: "a", informacio: "d", emlekezteto: "aj"},
+    {dátum: "2002.04.12", tipus: "Bla", információ: "asd", emlékeztető: "Ja"},
+    {dátum: "2002.04.13", tipus: "la", információ: "sd", emlékeztető: "Jaj"},
+    {dátum: "2002.04.14", tipus: "a", információ: "d", emlékeztető: "aj"},
 ]

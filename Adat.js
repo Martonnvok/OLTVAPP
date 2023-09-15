@@ -1,27 +1,19 @@
 class Adat {
-  #elem;
-  szuloElem;
-  #adatok;
-  #oltas;
+  #elem = [];
+  #szuloElem;
   
-  constructor(elem, adatok, szuloElem, oltas) {
+  constructor(elem, szuloElem) {
     this.#elem = elem;
-    this.szuloElem = szuloElem;
-    this.#adatok = adatok;
-    this.#oltas = oltas;
+    this.#szuloElem = szuloElem;
     this.kiir();
   }
   
   kiir() {
-    const AKTUALISOLTAS = this.#adatok.filter(adat => adat.tipus === this.#oltas);
-    let txt = "<ul class='list-group'>";
-    
-    for (const key of AKTUALISOLTAS) {
-      txt += "<li class='list-group-item'>" + key.datum + ": " + key.informacio + " " + key.emlekezteto + "</li>";
+    let txt = ""
+    for (const key in this.#elem) {
+      txt += "<span id='"+key+"'class='border border-1'>" +key+": "+this.#elem[key] + "</span>";
     }
-    
-    txt += "</ul>";
-    this.szuloElem.append(txt);
+    this.#szuloElem.append(txt);
   }
 }
 
