@@ -1,39 +1,49 @@
-header{
+header {
   width: 100%;
-  background-color: white;
-  z-index: 1; 
-  position: fixed; 
-  top: 0; 
+  z-index: 1;
+  position: fixed;
+  top: 0;
 }
+
+.navbar {
+  height: 100px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
- 
-  
+
+
 }
-main{
+main {
   margin-top: 100%;
   width: 800px;
   margin: auto;
   margin-bottom: 100px;
 }
+
 article {
-  margin-top: 100px; 
+  margin-top: 100px;
   padding: 20px;
 }
 
 footer {
-  background-color: #555; 
+  background-color: #555;
   height: 40px;
+  bottom: 0; 
+  width: 100%; 
 }
 
 
-#oltas1, #oltas2, #oltas0{
+#oltas1,
+#oltas2,
+#oltas0 {
   background-color: rgb(247, 170, 136);
   padding: 20px;
   font-weight: bolder;
   border-radius: 30px;
   text-align: center;
 }
+
 span {
   margin-right: 100px;
   display: flex;
@@ -42,7 +52,8 @@ span {
   padding-left: 20px;
   padding: 10px;
 }
-#emlékeztető{
+
+#emlékeztető {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
@@ -51,43 +62,48 @@ li {
   list-style-type: none;
 }
 
-.meret{
-  width: 350px;
-  float: left;
-  margin: 10px;
+.meret {
+
 }
 
-#gombM{
+#gombM {
   width: 100px;
+  right: 10px;
+  z-index: 1;
 }
-
 
 @media screen and (max-width: 650px) {
-  body{
+  body {
     background-color: lightblue;
-    
+
   }
 
-  .meret{
+  .navbar {
+    height: 100px;
+  }
+
+  .meret {
     height: 50px;
     width: 60px;
     float: left;
     padding: 12px;
   }
-  
-  #gombM{
+
+  #gombM {
     height: 50px;
     width: 50px;
-    float: left;
+    position: absolute;
+    top: 0;
+    right: 0;
     margin: 10px;
   }
 
   main {
-    margin:auto;
+    margin: auto;
     width: 400px;
   }
 
-  main{
+  main {
     width: 500px;
   }
 }

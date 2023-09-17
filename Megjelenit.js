@@ -21,7 +21,7 @@ class Megjelenit {
     let txt = `<nav class="navbar navbar-expand-sm bg-info navbar-light">`;
     txt += `<div class="container-fluid">
     <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    <button class="navbar-toggler megjelenit" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>`;
@@ -36,16 +36,19 @@ class Megjelenit {
     txt += `</div>`;
     txt += `</div>`;
     txt += ` <div class="input-group">
-    <input type="text" class="form-control meret" placeholder="Search" id="searchInput">
+    <input type="text" class="form-control" placeholder="Search" id="searchInput">
     <div class="input-group-append">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
     </div>
 </div>`;
     txt += `</nav>`;
 
+    
+
     HEADER.append(txt);
 
     this.kattintas();
+    this.keresoreKattint();
   }
 
   oltasok() {
@@ -53,7 +56,7 @@ class Megjelenit {
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>";
       txt +=
-        "<span id='oltas"+[i]+"' class='border border-1'>" +
+        "<span id='oltas" + [i] + "' class='border border-1'>" +
         this.#oltasok[i] +
         "</span>";
       txt += "<div class='adat" + [i] + "' style='display: none';></div>";
@@ -77,6 +80,22 @@ class Megjelenit {
       });
     }
   }
+
+  keresoreKattint() {
+    let searchInput = $("#searchInput");
+    searchInput.hide();
+    $("#gombM").click(function () {
+      if (searchInput.is(":visible")) {
+        searchInput.hide();
+
+      } else {
+        searchInput.show();
+
+      }
+
+    });
+  }
 }
+
 
 export default Megjelenit;
