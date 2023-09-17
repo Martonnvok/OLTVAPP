@@ -43,8 +43,6 @@ class Megjelenit {
 </div>`;
     txt += `</nav>`;
 
-    
-
     HEADER.append(txt);
 
     this.kattintas();
@@ -56,7 +54,9 @@ class Megjelenit {
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>";
       txt +=
-        "<span id='oltas" + [i] + "' class='border border-1'>" +
+        "<span id='oltas" +
+        [i] +
+        "' class='border border-1'>" +
         this.#oltasok[i] +
         "</span>";
       txt += "<div class='adat" + [i] + "' style='display: none';></div>";
@@ -74,9 +74,17 @@ class Megjelenit {
   kattintas() {
     for (let i = 0; i < this.#oltasok.length; i++) {
       $("#oltas" + [i] + "").on("click", () => {
-        $(".adat" + [i] + "").show();
-        $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
-        $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
+        if ($(".adat" + [i] + "").is(":visible")) {
+          $(".adat" + [i] + "").slideUp();
+          setTimeout(() => {
+            $("#oltas" + [i] + "").css("border-bottom-left-radius", "30px");
+            $("#oltas" + [i] + "").css("border-bottom-right-radius", "30px");
+          },400);
+        } else {
+          $(".adat" + [i] + "").slideDown();
+          $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
+          $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
+        }
       });
     }
   }
@@ -87,15 +95,11 @@ class Megjelenit {
     $("#gombM").click(function () {
       if (searchInput.is(":visible")) {
         searchInput.hide();
-
       } else {
         searchInput.show();
-
       }
-
     });
   }
 }
-
 
 export default Megjelenit;
