@@ -1,4 +1,4 @@
-import Adat from "../Adat.js";
+import Adat from "./Adat.js";
 
 class Megjelenit {
   #oltasok = [];
@@ -36,14 +36,16 @@ class Megjelenit {
     txt += `</div>`;
     txt += `</div>`;
     txt += ` <div class="input-group">
+    <div class="kereso-container">
     <input type="text" class="form-control" placeholder="Search" id="searchInput">
     <div class="input-group-append">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
     </div>
+    </div>
 </div>`;
     txt += `</nav>`;
 
-    
+
 
     HEADER.append(txt);
 

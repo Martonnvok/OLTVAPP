@@ -14,6 +14,7 @@ body {
 
 
 }
+
 main {
   margin-top: 100%;
   width: 800px;
@@ -29,10 +30,18 @@ article {
 footer {
   background-color: #555;
   height: 40px;
-  bottom: 0; 
-  width: 100%; 
+  bottom: 0;
+  width: 100%;
 }
 
+.input-group {
+ 
+}
+
+.form-control{
+  flex: 1; /* A kereső input elfoglalja a rendelkezésre álló helyet */
+  padding: 5px;
+}
 
 #oltas1,
 #oltas2,
@@ -62,14 +71,11 @@ li {
   list-style-type: none;
 }
 
-.meret {
-
-}
-
 #gombM {
   width: 100px;
   right: 10px;
   z-index: 1;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 650px) {
@@ -100,10 +106,6 @@ li {
 
   main {
     margin: auto;
-    width: 400px;
-  }
-
-  main {
     width: 500px;
   }
 }
