@@ -1,5 +1,5 @@
-import {oltasok, adatok, linkek} from "../adatok.js";
-import Megjelenit from "../Megjelenit.js";
+import {oltasok, adatok, linkek} from "../model/adatok.js";
+import Megjelenit from "../view/Megjelenit.js";
 
 $(function () {
     const TAROLO = $(".tarolo");

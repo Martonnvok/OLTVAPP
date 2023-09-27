@@ -1,4 +1,4 @@
-import Adat from "../Adat.js";
+import Adat from "./Adat.js";
 
 class Megjelenit {
   #oltasok = [];
@@ -21,7 +21,7 @@ class Megjelenit {
     let txt = `<nav class="navbar navbar-expand-sm bg-info navbar-light">`;
     txt += `<div class="container-fluid">
     <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    <button class="navbar-toggler megjelenit" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>`;
@@ -36,9 +36,11 @@ class Megjelenit {
     txt += `</div>`;
     txt += `</div>`;
     txt += ` <div class="input-group">
-    <input type="text" class="form-control meret" placeholder="Search" id="searchInput">
+    <div class="kereso-container">
+    <input type="text" class="form-control" placeholder="Search" id="searchInput">
     <div class="input-group-append">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
+    </div>
     </div>
 </div>`;
     txt += `</nav>`;
@@ -46,6 +48,7 @@ class Megjelenit {
     HEADER.append(txt);
 
     this.kattintas();
+    this.keresoreKattint();
   }
 
   oltasok() {
@@ -53,7 +56,9 @@ class Megjelenit {
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += "<br>";
       txt +=
-        "<span id='oltas"+[i]+"' class='border border-1'>" +
+        "<span id='oltas" +
+        [i] +
+        "' class='border border-1'>" +
         this.#oltasok[i] +
         "</span>";
       txt += "<div class='adat" + [i] + "' style='display: none';></div>";
@@ -71,11 +76,31 @@ class Megjelenit {
   kattintas() {
     for (let i = 0; i < this.#oltasok.length; i++) {
       $("#oltas" + [i] + "").on("click", () => {
-        $(".adat" + [i] + "").show();
-        $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
-        $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
+        if ($(".adat" + [i] + "").is(":visible")) {
+          $(".adat" + [i] + "").slideUp();
+          setTimeout(() => {
+            $("#oltas" + [i] + "").css("border-bottom-left-radius", "30px");
+            $("#oltas" + [i] + "").css("border-bottom-right-radius", "30px");
+          },400);
+        } else {
+          $(".adat" + [i] + "").slideDown();
+          $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
+          $("#oltas" + [i] + "").css("border-bottom-right-radius", "0px");
+        }
       });
     }
+  }
+
+  keresoreKattint() {
+    let searchInput = $("#searchInput");
+    searchInput.hide();
+    $("#gombM").click(function () {
+      if (searchInput.is(":visible")) {
+        searchInput.hide();
+      } else {
+        searchInput.show();
+      }
+    });
   }
 }
 
