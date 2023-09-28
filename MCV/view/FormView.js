@@ -19,12 +19,13 @@ class FormView {
     
     #formKezeles(){
         let txt = "<div class='form-group'>";
+        txt += `<div class="mb-3 mt-3">`
         for (const key in this.#adat) {
-            txt += `<input type='text' id='${key}' name='datum'>`;
-            txt += ` <label for="html">${key}</label>`;
+            
+            txt += `<input type='text' class = "form-control" id='form_${key}' name='datum' placeholder="${key}">`;
             txt += ` <br>`;
         }
-        
+        txt += `</div>`
         txt += "<button id=submit type='button'>Kész</button>";
         txt += "</div>";
         this.formElem.append(txt);

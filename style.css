@@ -27,15 +27,17 @@ article {
   padding: 20px;
 }
 
-footer {
+/*footer {
   background-color: #555;
   height: 40px;
   bottom: 0;
   width: 100%;
 }
+*/
 
-.input-group {
- 
+.form-control{
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 .form-control{
@@ -81,7 +83,6 @@ li {
 @media screen and (max-width: 650px) {
   body {
     background-color: lightblue;
-
   }
 
   .navbar {
@@ -107,5 +108,9 @@ li {
   main {
     margin: auto;
     width: 500px;
+  }
+
+  .tarolo{
+    margin: auto;
   }
 }
