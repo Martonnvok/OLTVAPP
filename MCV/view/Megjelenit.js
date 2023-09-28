@@ -1,4 +1,4 @@
-import Adat from "./Adat.js";
+import Adat from "./AdatView.js";
 
 class Megjelenit {
   #oltasok = [];
@@ -12,9 +12,7 @@ class Megjelenit {
     this.#adatok = adatok; //lista
     this.#linkek = linkek;
 
-    this.oltasok();
     this.navigacio();
-    this.kiir();
   }
 
  
@@ -56,28 +54,6 @@ class Megjelenit {
   }
 
   //Tábla
-
-  oltasok() {
-    let txt = "";
-    for (let i = 0; i < this.#oltasok.length; i++) {
-      txt += "<br>";
-      txt +=
-        "<span id='oltas" +
-        [i] +
-        "' class='border border-1'>" +
-        this.#oltasok[i] +
-        "</span>";
-      txt += "<div class='adat" + [i] + "' style='display: none';></div>";
-    }
-    this.szuloElem.append(txt);
-  }
-
-  kiir() {
-    for (let i = 0; i < this.#adatok.length; i++) {
-      this.gyerekElem = this.szuloElem.children(".adat" + [i] + "");
-      new Adat(this.#adatok[i], this.gyerekElem);
-    }
-  }
 
   //kattintások
   kattintas() {

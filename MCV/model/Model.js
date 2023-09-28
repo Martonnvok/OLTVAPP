@@ -14,12 +14,16 @@ class FormModel {
     }
     */
 
+    getOltas(index){
+      return this.#oltasok[index];
+    }
+
     getOltasok(){
-      return {...this.#oltasok};
+      return this.#oltasok;
     }
 
     getLinkek(){
-      return {...this.#linkek};
+      return this.#linkek;
     }
 
     getAdat(index){

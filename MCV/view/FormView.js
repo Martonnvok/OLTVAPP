@@ -4,7 +4,6 @@ class FormView {
     constructor(adat, szuloElem) {
         //Formhoz szükséges kódok
         this.#adat = adat;
-        console.log(this.#adat)
         this.szuloElem = szuloElem;
         this.szuloElem.html("<form>");
         this.formElem = this.szuloElem.children("form");
@@ -14,7 +13,6 @@ class FormView {
             event.preventDefault();
             this.#adatGyujt();
             this.#kattintTrigger("ujAdatHozzaAdas");
-            console.log(this.#adat);
         });
  
     }
@@ -22,11 +20,9 @@ class FormView {
     #formKezeles(){
         let txt = "<div class='form-group'>";
         for (const key in this.#adat) {
-            console.log(key)
             txt += `<input type='text' id='${key}' name='datum'>`;
             txt += ` <label for="html">${key}</label>`;
             txt += ` <br>`;
-            console.log(this.#adat)
         }
         
         txt += "<button id=submit type='button'>Kész</button>";
@@ -44,7 +40,6 @@ class FormView {
         this.#adat.információ = INFORMACIO.val();
         this.#adat.emlékeztető = EMLEKEZTETO.val();
 
-        console.log(this.#adat);
     }
 
     #kattintTrigger(esemenyNev){
