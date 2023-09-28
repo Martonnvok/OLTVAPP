@@ -8,14 +8,49 @@ class Megjelenit {
 
   constructor(oltasok, adatok, szuloElem, linkek) {
     this.szuloElem = szuloElem;
+
+    //Formhoz szükséges kódok
+    this.szuloElem.html("<form>");
+    this.formElem = this.szuloElem.children("form");
+    this.submitElem = this.formElem.children("div").children("#submit");
+    this.submitElem.on("click", (event) => {
+      event.preventDefault();
+      this.#adatGyujt();
+      this.#kattintTrigger("ujAdatHozzaAdas");
+    });
+
     this.#oltasok = oltasok; //tömb
     this.#adatok = adatok; //lista
     this.#linkek = linkek;
+
     this.oltasok();
     this.navigacio();
     this.kiir();
+    this.#formKezeles();
   }
 
+  #formKezeles(){
+    let txt = "<div class='form-group'>";
+    txt += "<input type='text' id='datum' name='datum'>";
+    txt += "<input type='text' id='tipus' name='tipus'>";
+    txt += "<input type='text' id='informacio' name='informacio'>";
+    txt += "<input type='text' id='emlekezteto' name='emlekezteto'>";
+    txt += "<input type='text' id='cim' name='cim'>";
+    txt += "<button id=submit type='button'>Kész</button>";
+    txt += "</div>";
+    this.formElem.append(txt);
+  }
+
+  #adatGyujt(){
+
+  }
+
+  #kattintTrigger(esemenyNev){
+    const E = new CustomEvent(esemenyNev, { detail: {...this.#adatok} });
+    window.dispatchEvent(E);
+  }
+
+  //navigáció
   navigacio() {
     const HEADER = $("header");
     let txt = `<nav class="navbar navbar-expand-sm bg-info navbar-light">`;
@@ -51,6 +86,8 @@ class Megjelenit {
     this.keresoreKattint();
   }
 
+  //Tábla
+
   oltasok() {
     let txt = "";
     for (let i = 0; i < this.#oltasok.length; i++) {
@@ -73,6 +110,7 @@ class Megjelenit {
     }
   }
 
+  //kattintások
   kattintas() {
     for (let i = 0; i < this.#oltasok.length; i++) {
       $("#oltas" + [i] + "").on("click", () => {
