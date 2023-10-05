@@ -16,24 +16,35 @@ header {
 }
 
 .input-meezo {
-  width: 450px;
+  width: 150px;
   position: absolute;
-  right: 0;
+
 
 }
 
+
+#searchInput{
+
+width: 150px;
+}
 
 
 
 
 .input-group-icon {
-
-  width: 300px;
-  padding-left: 10px;
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
 }
 
 .navbar {
   height: 100px;
+}
+
+#gombM {
+  width: 100%;
+  height: 100%;
+
 }
 
 body {
@@ -105,36 +116,40 @@ li {
   list-style-type: none;
 }
 
-#gombM {
-  width: 100px;
-  height: 40px;
-  right: 10px;
 
-  margin-left: 10px;
-}
 
 @media screen and (max-width: 10086px) {
   .kereso-container {
-    position: absolute;
+    position: none;
 
-    padding-left: 80px;
+    padding-left: 120px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: -20px;
 
   }
+  #searchInput{
+
+    width: 100%;
+  }
+
+  .input-group{
+position: static;
+margin-right: 30px;
+
+  }
 
   .input-meezo {
     width: 450px;
-    position: absolute;
+    position: none;
     left:  0;
 
   }
 
   .input-group-icon {
+    position: static;
+    width: 200px;
 
-    width: 300px;
-    padding-left: 10px;
   }
 
   .navbar {
