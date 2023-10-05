@@ -2,6 +2,8 @@ export const oltasok = [
     "Koronavirus",
     "Bárányhimlő",
     "HPV oltás",
+    "teszt",
+    "Halrudi"
 ]
 
 export const adatok = [

@@ -10,7 +10,6 @@ class AdatView {
     this.#elem = elem;
     this.#oltas = oltas;
     this.#szuloElem = szuloElem;
-    console.log(this.#oltas);
     this.oltasok();
     this.kiir();
     this.click();

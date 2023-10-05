@@ -44,7 +44,7 @@ article {
   flex: 1; /* A kereső input elfoglalja a rendelkezésre álló helyet */
   padding: 5px;
 }
-
+#oltas3,
 #oltas1,
 #oltas2,
 #oltas0 {
