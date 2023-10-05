@@ -5,6 +5,7 @@ class Megjelenit {
   #adatok = [];
   #linkek = [];
   szuloElem;
+  searchButton;
 
   constructor(oltasok, adatok, szuloElem, linkek) {
     this.szuloElem = szuloElem;
@@ -15,7 +16,7 @@ class Megjelenit {
     this.navigacio();
   }
 
- 
+
 
   //navigáció
   navigacio() {
@@ -39,8 +40,10 @@ class Megjelenit {
     txt += `</div>`;
     txt += ` <div class="input-group">
     <div class="kereso-container">
+    <div class="input-mezo">
     <input type="text" class="form-control" placeholder="Search" id="searchInput">
-    <div class="input-group-append">
+    </div>
+    <div class="input-group-icon">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
     </div>
     </div>
@@ -64,7 +67,7 @@ class Megjelenit {
           setTimeout(() => {
             $("#oltas" + [i] + "").css("border-bottom-left-radius", "30px");
             $("#oltas" + [i] + "").css("border-bottom-right-radius", "30px");
-          },400);
+          }, 400);
         } else {
           $(".adat" + [i] + "").slideDown();
           $("#oltas" + [i] + "").css("border-bottom-left-radius", "0px");
@@ -75,6 +78,8 @@ class Megjelenit {
   }
 
   keresoreKattint() {
+    const divElem = $(".kereso-container").children(".input-group-append");
+    this.searchButton = $(".input-group-append");
     let searchInput = $("#searchInput");
     searchInput.hide();
     $("#gombM").click(function () {
