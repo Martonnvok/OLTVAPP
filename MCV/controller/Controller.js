@@ -1,7 +1,8 @@
 import AdatView from "../view/AdatView.js"
 import Megjelenit from "../view/Megjelenit.js"
 import FormView from "../view/FormView.js";
-import FormModel from "../model/Model.js";
+import Model from "../model/Model.js";
+
 
 
 class Controller {
@@ -12,7 +13,7 @@ class Controller {
   constructor(TAROLO, UJADAT) {
     this.#tarolo = TAROLO;
     this.#ujadat = UJADAT;
-    const MODEL = new FormModel();
+    const MODEL = new Model();
     new Megjelenit(MODEL.getOltasok(), MODEL.getAdatok(), this.#ujadat, MODEL.getLinkek());
     for (let index = 0; index < MODEL.getAdatok().length; index++) {
       this.#ADATVIEW = new AdatView(index, MODEL.getOltas(index), MODEL.getAdat(index), this.#tarolo);
@@ -27,6 +28,7 @@ class Controller {
         new AdatView(index, MODEL.getOltas(index), MODEL.getAdat(index), this.#tarolo);
       }
     });
+
   }
 }
 

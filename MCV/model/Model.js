@@ -1,5 +1,5 @@
 import { oltasok, adatok, linkek } from "./adatok.js";
-class FormModel {
+class Model {
   #oltasok = [];
   #adatok = [];
   #linkek = [];
@@ -35,4 +35,4 @@ class FormModel {
     return this.#adatok;
   }
 }
-export default FormModel;
+export default Model;

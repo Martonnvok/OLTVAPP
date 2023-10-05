@@ -5,8 +5,46 @@ header {
   top: 0;
 }
 
+.kereso-container {
+  position: absolute;
+
+  padding-left: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: -20px;
+
+}
+
+.input-meezo {
+  width: 150px;
+  position: absolute;
+
+
+}
+
+
+#searchInput{
+
+width: 150px;
+}
+
+
+
+
+.input-group-icon {
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+}
+
 .navbar {
   height: 100px;
+}
+
+#gombM {
+  width: 100%;
+  height: 100%;
+
 }
 
 body {
@@ -14,6 +52,10 @@ body {
 
 
 }
+
+
+
+
 
 main {
   margin-top: 100%;
@@ -35,15 +77,21 @@ article {
 }
 */
 
-.form-control{
+.form-control {
   border: 2px solid black;
   border-radius: 5px;
+  width: 150px;
+  flex: 1;
+  /* A kereső input elfoglalja a rendelkezésre álló helyet */
+  padding: 5px;
+  height: 40px;
 }
 
 .form-control{
   flex: 1; /* A kereső input elfoglalja a rendelkezésre álló helyet */
   padding: 5px;
 }
+
 #oltas3,
 #oltas1,
 #oltas2,
@@ -73,14 +121,61 @@ li {
   list-style-type: none;
 }
 
-#gombM {
-  width: 100px;
-  right: 10px;
-  z-index: 1;
-  margin-left: 10px;
+
+
+@media screen and (max-width: 10086px) {
+  .kereso-container {
+    position: none;
+
+    padding-left: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -20px;
+
+  }
+  #searchInput{
+
+    width: 100%;
+  }
+
+  .input-group{
+position: static;
+margin-right: 30px;
+
+  }
+
+  .input-meezo {
+    width: 450px;
+    position: none;
+    left:  0;
+
+  }
+
+  .input-group-icon {
+    position: static;
+    width: 200px;
+
+  }
+
+  .navbar {
+    height: 100px;
+  }
+
+  #gombM {
+    width: 100px;
+    height: 40px;
+    right: 10px;
+
+    margin-left: 10px;
+  }
+
 }
 
-@media screen and (max-width: 650px) {
+
+
+
+
+@media screen and (max-width: 800px) {
   body {
     background-color: lightblue;
   }
@@ -88,6 +183,24 @@ li {
   .navbar {
     height: 100px;
   }
+
+  .input-group-icon {
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    padding-left: 30px;
+  }
+
+
+  #gombM {
+    width: 100px;
+    height: 80px;
+
+
+
+  }
+
 
   .meret {
     height: 50px;
@@ -99,10 +212,7 @@ li {
   #gombM {
     height: 50px;
     width: 50px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
+    margin: auto;
   }
 
   main {
@@ -110,7 +220,7 @@ li {
     width: 500px;
   }
 
-  .tarolo{
+  .tarolo {
     margin: auto;
   }
 }
