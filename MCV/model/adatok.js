@@ -12,7 +12,14 @@ export const adatok = [
 
 
 export const linkek = [
-    "első oldal",
-    "második oldal",
-    "harmadik oldal",
+    "Főoldal",
+    "Felhasználói oldal",
+    "Támogagtók oldal",
+    "Bejelentkezés"
+];
+
+
+export const BELEPES = [
+    {felhasznalonev: "Admin", jelszo:"123456"},
+{felhasznalonev: "Orvos", jelszo:"123456"}
 ];

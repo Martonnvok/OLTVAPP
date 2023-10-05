@@ -31,7 +31,7 @@ class Megjelenit {
     txt += `<ul class="navbar-nav">`;
     for (let i = 0; i < this.#linkek.length; i++) {
       txt += `<li class="nav-item">`;
-      txt += `<a class="nav-link" href="#">${this.#linkek[i]}</a>`;
+      txt += `<a class="nav-link" id =${this.#linkek}>${this.#linkek[i]}</a>`;
       txt += `</li>`;
     }
     txt += `</ul>`;
