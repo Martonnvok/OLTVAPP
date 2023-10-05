@@ -12,7 +12,7 @@ class Bcontroller{
         this.#bejelentkezes.setFelhasznalok(this.#bmodell.getFelhasznalok());
 
        
-        this.#bejelentkezes.belepesEllenorzes();
+        //this.#bejelentkezes.belepesEllenorzes();
     }
     
 }
