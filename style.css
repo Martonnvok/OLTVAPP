@@ -7,8 +7,6 @@ header {
 
 .kereso-container {
   position: absolute;
-
-  padding-left: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: -20px;
@@ -16,14 +14,27 @@ header {
 }
 
 .input-meezo {
-  width: 150px;
   position: absolute;
+  margin: auto;
+ 
 
 
+}
+.search-text{
+width: 100px;
+border: 2px solid black;
+  border-radius: 5px;
+ 
+  flex: 1;
+  /* A kereső input elfoglalja a rendelkezésre álló helyet */
+  padding: 5px;
+  height: 40px; 
 }
 
 #submit{
   border-radius: 30px;
+
+width: 100px;
 }
 
 #searchInput {
@@ -37,7 +48,7 @@ header {
 
 
 .input-group-icon {
-  position: relative;
+
   width: 100%;
   padding-left: 30px;
 }
@@ -123,8 +134,6 @@ li {
 @media screen and (max-width: 10086px) {
   .kereso-container {
     position: none;
-
-    padding-left: 120px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: -20px;
@@ -143,14 +152,15 @@ li {
   }
 
   .input-meezo {
-    width: 450px;
+    width: 600px;
+    padding-right: 80px;
     position: none;
     left: 0;
 
   }
 
   .input-group-icon {
-    position: static;
+ 
     width: 200px;
 
   }
@@ -174,6 +184,52 @@ li {
 
 
 @media screen and (max-width: 800px) {
+  header{
+    height: 1800px;
+
+
+
+  }
+
+  nav{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 1800px;
+
+  }
+
+.kereso-container{
+width: 300px;
+
+
+  }
+  .input-group{
+    margin-top: 80px;
+    position: absolute;
+  right: 0px;
+  width: 200px;
+
+  padding: 10px;
+  }    
+
+  
+.navbar-toggler{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-right: 300px;
+
+  width: 100px;
+
+}
+.input-meezo {
+  width: 150px;
+  position: none;
+  padding-right: 40px;
+  right: 0;
+
+
+}
+
   body {
     background-color: lightblue;
   }
@@ -183,16 +239,15 @@ li {
   }
 
   .input-group-icon {
-    position: absolute;
-    width: 300px;
+    position: none;
+    width: 200px;
     height: 40px;
-    padding-left: 10px;
-    padding-left: 30px;
+    padding-left: 20px;
   }
 
 
   #gombM {
-    width: 100px;
+    width: 80px;
     height: 80px;
 
 
