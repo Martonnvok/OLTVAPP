@@ -1,18 +1,32 @@
-import { oltasok, adatok, linkek } from "./adatok.js";
+import { oltasok, kiirtOltasok, adatok, linkek } from "./adatok.js";
 class Model {
   #oltasok = [];
+  #kiirtOltasok = [];
   #adatok = [];
   #linkek = [];
+
   constructor() {
     this.#oltasok = oltasok;
+    this.#kiirtOltasok = kiirtOltasok;
     this.#adatok = adatok;
     this.#linkek = linkek;
-    console.log(this.#adatok);
+
   }
 
   ujAdat(adat) {
     this.#adatok.push(adat);
-    console.log(this.#adatok);
+  }
+
+  ujkiirtOltas(adat){
+    this.#kiirtOltasok.push(adat);
+  }
+
+  getKiirtOltasok(){
+    return this.#kiirtOltasok;
+  }
+
+  getKiirtOltas(index){
+    return this.#kiirtOltasok[index];
   }
 
   getOltas(index) {

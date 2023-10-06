@@ -22,13 +22,18 @@ header {
 
 }
 
-
-#searchInput{
-
-width: 150px;
+#submit{
+  border-radius: 30px;
 }
 
+#searchInput {
 
+  width: 150px;
+}
+
+.tarolo{
+  margin-left: 100px;
+}
 
 
 .input-group-icon {
@@ -69,38 +74,30 @@ article {
   padding: 20px;
 }
 
-/*footer {
-  background-color: #555;
-  height: 40px;
-  bottom: 0;
-  width: 100%;
+#vakcina{
+  padding: 4px;
 }
-*/
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
 
 .form-control {
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 150px;
+  border: 1px solid black;
+  border-radius: 2px;
   flex: 1;
   /* A kereső input elfoglalja a rendelkezésre álló helyet */
   padding: 5px;
   height: 40px;
 }
 
-.form-control{
-  flex: 1; /* A kereső input elfoglalja a rendelkezésre álló helyet */
+.form-control {
+  flex: 1;
+  /* A kereső input elfoglalja a rendelkezésre álló helyet */
   padding: 5px;
-}
-
-#oltas3,
-#oltas1,
-#oltas2,
-#oltas0 {
-  background-color: rgb(247, 170, 136);
-  padding: 20px;
-  font-weight: bolder;
-  border-radius: 30px;
-  text-align: center;
 }
 
 span {
@@ -133,21 +130,22 @@ li {
     margin-top: -20px;
 
   }
-  #searchInput{
+
+  #searchInput {
 
     width: 100%;
   }
 
-  .input-group{
-position: static;
-margin-right: 30px;
+  .input-group {
+    position: static;
+    margin-right: 30px;
 
   }
 
   .input-meezo {
     width: 450px;
     position: none;
-    left:  0;
+    left: 0;
 
   }
 
@@ -220,7 +218,4 @@ margin-right: 30px;
     width: 500px;
   }
 
-  .tarolo {
-    margin: auto;
-  }
 }
