@@ -41,7 +41,7 @@ class Megjelenit {
     txt += ` <div class="input-group">
     <div class="kereso-container">
     <div class="input-mezo">
-    <input type="text" class="form-control" placeholder="Search" id="searchInput">
+    <input type="text" class="search-text" placeholder="Search" id="searchInput">
     </div>
     <div class="input-group-icon">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
