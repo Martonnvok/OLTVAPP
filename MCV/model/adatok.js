@@ -17,7 +17,7 @@ export const linkek = [
     "Főoldal",
     "Felhasználói oldal",
     "Támogagtók oldal",
-    "Bejelentkezés"
+    "bejelentkezes"
 ];
 
 
