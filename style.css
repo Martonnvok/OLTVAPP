@@ -8,33 +8,35 @@ header {
 .kereso-container {
   position: absolute;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-top: -20px;
 
 }
 
+
 .input-meezo {
   position: absolute;
   margin: auto;
- 
+
 
 
 }
-.search-text{
-width: 100px;
-border: 2px solid black;
+
+.search-text {
+  width: 100px;
+  border: 2px solid black;
   border-radius: 5px;
- 
+
   flex: 1;
   /* A kereső input elfoglalja a rendelkezésre álló helyet */
   padding: 5px;
-  height: 40px; 
+  height: 40px;
 }
 
-#submit{
+#submit {
   border-radius: 30px;
 
-width: 100px;
+  width: 100px;
 }
 
 #searchInput {
@@ -42,7 +44,7 @@ width: 100px;
   width: 150px;
 }
 
-.tarolo{
+.tarolo {
   margin-left: 100px;
 }
 
@@ -85,14 +87,12 @@ article {
   padding: 20px;
 }
 
-#vakcina{
+#vakcina {
   padding: 4px;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
+  display: grid;
   margin: auto;
 }
 
@@ -160,7 +160,7 @@ li {
   }
 
   .input-group-icon {
- 
+
     width: 200px;
 
   }
@@ -184,54 +184,52 @@ li {
 
 
 @media screen and (max-width: 800px) {
-  header{
+  header {
     height: 1800px;
 
 
 
   }
 
-  nav{
+  nav {
     display: grid;
     grid-template-columns: 1fr;
     height: 1800px;
 
   }
 
-.kereso-container{
-width: 300px;
+  .kereso-container {
+    width: 300px;
 
 
   }
-  .input-group{
+
+  .input-group {
     margin-top: 80px;
     position: absolute;
-  right: 0px;
-  width: 200px;
+    right: 0px;
+    width: 200px;
 
-  padding: 10px;
-  }    
-
-  
-.navbar-toggler{
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-right: 300px;
-
-  width: 100px;
-
-}
-.input-meezo {
-  width: 150px;
-  position: none;
-  padding-right: 40px;
-  right: 0;
+    padding: 10px;
+  }
 
 
-}
+  .navbar-toggler {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-right: 300px;
 
-  body {
-    background-color: lightblue;
+    width: 100px;
+
+  }
+
+  .input-meezo {
+    width: 150px;
+    position: none;
+    padding-right: 40px;
+    right: 0;
+
+
   }
 
   .navbar {
