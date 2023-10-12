@@ -1,74 +1,70 @@
 class Bejelentkezes {
     #szuloElem
-    felhasznalok=[]
+    felhasznalok = []
 
-    constructor(szuloElem, bcontroller) {
+    constructor(szuloElem) {
         this.#szuloElem = szuloElem;
-        this.#szuloElem.html("<form>");
         this.divElem = this.#szuloElem.children(".bejelentkezes");
 
-        this.felhasznalonev = this.#szuloElem.find(".uname");
-        this.jelszo = this.#szuloElem.find('.psw');
+        this.felhasznalonev = this.#szuloElem.find(".felhasznalonev");
+        this.jelszo = this.#szuloElem.find(".jelszo");
         this.belepGomb = this.#szuloElem.find(".belep");
 
-        this.bejelentkez()
-
-        this.felhasznalok = bcontroller;
-        this.felhasznalok = [];
+        this.bejelentkez();
 
         this.belepGomb.on('click', () => {
-            this.bcontroller.belepesEllenorzes();
+            this.esemenyTrigger('belep');
         });
-        
+
+
     }
 
     bejelentkez() {
-        let txt = `<form >`
 
-        txt += `<div >
-        <input type="text" placeholder="Felhasználónév" class="uname" >
-        <input type="password" placeholder="Jelszó" class="psw" >
+        let txt = `<form>
+        <input type="text" placeholder="Felhasználónév" class="felhasznalonev autocomplete="current-password"" >
+        <input type="password" placeholder="Jelszó" class="jelszo autocomplete="current-password"" >
         <br>
-        <button type="submit" class="belep">Login</button>
-      </div>`
+        <button type="submit" class="belep">Login</button>`
 
-        txt += `<div >
-      <button type="button" >Cancel</button>
-      <span >Forgot <a href="#">password?</a></span>
-    </div>
-  </form>`
+        txt += `<button type="button" >Cancel</button>
+                <span >Forgot <a href="#">password?</a></span>
+                </form>`
 
         this.#szuloElem.append(txt);
 
 
     }
 
-    belepesEllenorzes() {
+    belepesEllenorzes(felhasznalok) {
+        this.felhasznalok = felhasznalok;
+
+        let txt = '';
         const felhasznalonevInput = this.felhasznalonev.val();
         const jelszoInput = this.jelszo.val();
 
-        const login = this.felhasznalok.some((user) => {
-            return user.felhasznalonev === felhasznalonevInput && user.jelszo === jelszoInput;
-        });
+        if (felhasznalonevInput !== '' && jelszoInput !== '') {
+            const login = felhasznalok.some((user) => {
+                return user.felhasznalonev === felhasznalonevInput && user.jelszo === jelszoInput;
+            });
 
-        if (login) {
-            this.divElem.html('<p>Sikeres belépés!</p>');
-        } else {
-            alert('Hibás felhasználónév vagy jelszó!');
+            if (login) {
+                this.#szuloElem.find('form').next('p').remove();
+                txt += '<p>Sikeres belépés!</p>';
+            } else {
+                this.#szuloElem.find('form').next('p').remove();
+                txt += '<p>Hibás felhasználónév vagy jelszó!</p>';       
+            }
         }
-
-        this.felhasznalonev.val('');
-        this.jelszo.val('');
+        this.#szuloElem.find('form').after(txt);
     }
 
-    setFelhasznalok(felhasznalok) {
-        this.felhasznalok = felhasznalok;
-    }
 
     esemenyTrigger(esemenyNev) {
         const E = new CustomEvent(esemenyNev);
         window.dispatchEvent(E);
     }
+
 
 }
 

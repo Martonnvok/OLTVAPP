@@ -21,7 +21,7 @@ class AdatView {
     txt +=
       "<span id='oltas" +
       this.#index +
-      "' class='border border-1'>" +
+      "'style = 'background-color: rgb(247, 170, 136); padding: 15px; font-weight: bolder; border-radius: 30px; text-align: center; font-size: 30px;'>" +
       this.#oltas +
       "</span>";
     this.#szuloElem.append(txt);
