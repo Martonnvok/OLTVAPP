@@ -4,7 +4,6 @@ class FormView {
   #mentettOlt;
 
   constructor(adat, oltasok, szuloElem) {
-    //Formhoz szükséges kódok
     this.#oltasok = oltasok;
     this.#adat = adat;
     this.szuloElem = szuloElem;
@@ -13,6 +12,7 @@ class FormView {
     this.#formKezeles();
     this.submitElem = $("#submit");
     this.submitElem.on("click", (event) => {
+
       event.preventDefault();
       this.#adatGyujt();
       this.#kattintTrigger("ujAdatHozzaAdas");
@@ -20,21 +20,26 @@ class FormView {
   }
 
   #formKezeles() {
-    let txt = "<div class='form-group'>";
-    txt += "<div class='combo box'>";
+    let txt = "<div class='form'>";
     txt += `<label for="vakcina">Válassz vakcinát:</label>`;
     txt += `<select name="vakcina" id="vakcina">`;
     for (let i = 0; i < this.#oltasok.length; i++) {
       txt += `<option id=valaszt${i} value="${this.#oltasok[i]}">${this.#oltasok[i]}</option>`;
     }
     txt += `</select>`;
-    txt += "</div>";
-    txt += `<div class="mb-3 mt-3">`;
-    for (const key in this.#adat) {
-      txt += `<input type='text' class = "form-control" id='form_${key}' name='datum' placeholder="${key}">`;
-      txt += ` <br>`;
-    }
-    txt += `</div>`;
+    txt += "<br>"
+    txt += `<label for="datum">Dátum:</label>`
+    txt += `<input type="date" id="datum" name="datum">`
+    txt += "<br>"
+    txt += `<label for="datum">Tipus:</label>`
+    txt += `<input type='text' class = "form-control" id='form_tipus'>`;
+    txt += "<br>"
+    txt += `<label for="datum">Információ:</label>`
+    txt += `<input type='text' class = "form-control" id='form_információ'>`;
+    txt += "<br>"
+    txt += `<label for="datum">Emlékeztető:</label>`
+    txt += `<input type='text' class = "form-control" id='form_emlékeztető'>`;
+    txt += `<br>`;
     txt += "<button type='submit' id=submit>Küldés</button>";
     txt += "</div>";
     this.formElem.append(txt);
@@ -42,12 +47,13 @@ class FormView {
 
   #adatGyujt() {
     Object.keys(this.#adat).forEach((key) => {
-        this.#adat[key] = $(`#form_${key}`).val();
+      this.#adat[key] = $(`#form_${key}`).val();
     });
+    this.#adat.dátum = $("#datum").val();
     this.#mentettOlt = $("#vakcina").val();
   }
 
-  getMentettOlt(){
+  getMentettOlt() {
     return this.#mentettOlt;
   }
 

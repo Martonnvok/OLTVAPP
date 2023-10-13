@@ -32,7 +32,7 @@ class Megjelenit {
     txt += `<ul class="navbar-nav">`;
     for (let i = 0; i < this.#linkek.length; i++) {
       txt += `<li class="nav-item">`;
-      txt += `<a class="nav-link" id =${this.#linkek}>${this.#linkek[i]}</a>`;
+      txt += `<a class="nav-link" id =${this.#linkek} href="${this.#linkek[i]+".html"}">${this.#linkek[i]}</a>`;
       txt += `</li>`;
     }
     txt += `</ul>`;
@@ -41,7 +41,7 @@ class Megjelenit {
     txt += ` <div class="input-group">
     <div class="kereso-container">
     <div class="input-mezo">
-    <input type="text" class="form-control" placeholder="Search" id="searchInput">
+    <input type="text" class="search-text" placeholder="Search" id="searchInput">
     </div>
     <div class="input-group-icon">
         <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
