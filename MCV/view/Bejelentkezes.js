@@ -13,7 +13,7 @@ class Bejelentkezes {
         this.bejelentkez();
 
         this.belepGomb.on('click', () => {
-            this.esemenyTrigger('belep');
+            this.#esemenyTrigger('belep');
         });
 
 
@@ -60,7 +60,7 @@ class Bejelentkezes {
     }
 
 
-    esemenyTrigger(esemenyNev) {
+    #esemenyTrigger(esemenyNev) {
         const E = new CustomEvent(esemenyNev);
         window.dispatchEvent(E);
     }
