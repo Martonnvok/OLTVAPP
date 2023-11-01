@@ -1,7 +1,12 @@
 import { BELEPES } from "./adatok.js";
 class Bmodell {
+  #belepes=[]
+  constructor(){
+    this.#belepes=BELEPES;
+
+  }
   getFelhasznalok() {
-    return BELEPES;
+    return {...this.#belepes}
   }
 
 }

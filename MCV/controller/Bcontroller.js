@@ -7,11 +7,7 @@ class Bcontroller{
     constructor(bejelentkezes){
         this.#bejelentkezes = bejelentkezes;
         this.#bmodell = new Bmodell();
-        this.#bejelentkezes = new Bejelentkezes(bejelentkezes);
-        console.log(this.#bmodell.getFelhasznalok());
-
-       
-        this.#bejelentkezes.belepesEllenorzes(this.#bmodell.getFelhasznalok());
+        this.#bejelentkezes = new Bejelentkezes(bejelentkezes, this.#bmodell.getFelhasznalok());
         
     }
     

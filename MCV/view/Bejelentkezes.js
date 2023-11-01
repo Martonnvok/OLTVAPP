@@ -1,20 +1,27 @@
 class Bejelentkezes {
     #szuloElem
-    felhasznalok = []
+    #adatok=[]
 
-    constructor(szuloElem) {
+    constructor(szuloElem, adatok) {
+        this.#adatok = adatok
         this.#szuloElem = szuloElem;
         this.divElem = this.#szuloElem.children(".bejelentkezes");
 
-        this.felhasznalonev = this.#szuloElem.find(".felhasznalonev");
-        this.jelszo = this.#szuloElem.find(".jelszo");
-        this.belepGomb = this.#szuloElem.find(".belep");
+        this.felhasznalonev = this.#szuloElem.children(".felhasznalonev");
+        this.jelszo = this.#szuloElem.children(".jelszo");
+        this.belepGomb = this.#szuloElem.children("#belep");
+        console.log(this.belepGomb)
 
         this.bejelentkez();
 
-        this.belepGomb.on('click', () => {
+        this.belepGomb.on('click', (event) => {
+            console.log("hsgfjhgsd")
+            event.preventDefault();
             this.esemenyTrigger('belep');
+            this.#belepesEllenorzes();
         });
+
+        
 
 
     }
@@ -22,31 +29,29 @@ class Bejelentkezes {
     bejelentkez() {
 
         let txt = `<form>
-        <input type="text" placeholder="Felhasználónév" class="felhasznalonev autocomplete="current-password"" >
-        <input type="password" placeholder="Jelszó" class="jelszo autocomplete="current-password"" >
+        <input type="text" placeholder="Felhasználónév" class="felhasznalonev">
+        <input type="password" placeholder="Jelszó" class="jelszo">
         <br>
-        <button type="submit" class="belep">Login</button>`
-
-        txt += `<button type="button" >Cancel</button>
-                <span >Forgot <a href="#">password?</a></span>
-                </form>`
+        <button type="button" id="belep">Belepes</button>
+        <span >Forgot <a href="#">password?</a></span>
+        </form>`
 
         this.#szuloElem.append(txt);
 
 
     }
 
-    belepesEllenorzes(felhasznalok) {
-        this.felhasznalok = felhasznalok;
+    #belepesEllenorzes() {
 
         let txt = '';
         const felhasznalonevInput = this.felhasznalonev.val();
         const jelszoInput = this.jelszo.val();
 
         if (felhasznalonevInput !== '' && jelszoInput !== '') {
-            const login = felhasznalok.some((user) => {
-                return user.felhasznalonev === felhasznalonevInput && user.jelszo === jelszoInput;
-            });
+            for (let i = 0; i < this.#adatok.length; i++) {
+                console.log(this.#adatok)
+                
+            }
 
             if (login) {
                 this.#szuloElem.find('form').next('p').remove();
