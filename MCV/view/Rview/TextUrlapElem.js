@@ -16,7 +16,7 @@ class TextUrlapElem {
       this.invalidElem = this.formElem
         .children("div:last-child")
         .children(".invalid"); 
-      this.inputElem.on("keyup", () => {
+      this.inputElem.on("input", () => {
         this.#value = this.inputElem.val();
         let regex = this.#leiro.regex;
         let reg = new RegExp(regex);
