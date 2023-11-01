@@ -14,11 +14,16 @@ class Bejelentkezes {
 
         this.bejelentkez();
 
+<<<<<<< HEAD
         this.belepGomb.on('click', (event) => {
             console.log("hsgfjhgsd")
             event.preventDefault();
             this.esemenyTrigger('belep');
             this.#belepesEllenorzes();
+=======
+        this.belepGomb.on('click', () => {
+            this.#esemenyTrigger('belep');
+>>>>>>> ba6b9d5e05beafd5b46fcea47bb0341b7e57d08f
         });
 
         
@@ -65,7 +70,7 @@ class Bejelentkezes {
     }
 
 
-    esemenyTrigger(esemenyNev) {
+    #esemenyTrigger(esemenyNev) {
         const E = new CustomEvent(esemenyNev);
         window.dispatchEvent(E);
     }

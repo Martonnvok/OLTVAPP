@@ -12,48 +12,26 @@ class Megjelenit {
     this.#oltasok = oltasok; //tömb
     this.#adatok = adatok; //lista
     this.#linkek = linkek;
-
+    console.log(this.#linkek);
     this.navigacio();
+    this.kattintas();
+    this.keresoreKattint();
   }
 
 
 
   //navigáció
   navigacio() {
-    const HEADER = $("header");
-    let txt = `<nav class="navbar navbar-expand-sm bg-info navbar-light">`;
-    txt += `<div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler megjelenit" type="button" data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>`;
-    txt += `<div class="collapse navbar-collapse" id="collapsibleNavbar">`;
-    txt += `<ul class="navbar-nav">`;
-    for (let i = 0; i < this.#linkek.length; i++) {
+    const divElem = $(".linkek");
+    divElem.append(`<ul class="navbar-nav"></ul>`);
+    const ulElem = divElem.children("ul");
+    let txt = "";
+    for (let i = 0; i < 4; i++) {
       txt += `<li class="nav-item">`;
-      txt += `<a class="nav-link" id =${this.#linkek} href="${this.#linkek[i]+".html"}">${this.#linkek[i]}</a>`;
+      txt += `<a class="nav-link" id =${this.#linkek.name[i]} href="${this.#linkek.link[i]}">${this.#linkek.name[i]}</a>`;
       txt += `</li>`;
     }
-    txt += `</ul>`;
-    txt += `</div>`;
-    txt += `</div>`;
-    txt += ` <div class="input-group">
-    <div class="kereso-container">
-    <div class="input-mezo">
-    <input type="text" class="search-text" placeholder="Search" id="searchInput">
-    </div>
-    <div class="input-group-icon">
-        <button class="btn btn-primary" id = "gombM"><i class="fas fa-search"></i></button>
-    </div>
-    </div>
-</div>`;
-    txt += `</nav>`;
-
-    HEADER.append(txt);
-
-    this.kattintas();
-    this.keresoreKattint();
+    ulElem.append(txt);
   }
 
   //Tábla
